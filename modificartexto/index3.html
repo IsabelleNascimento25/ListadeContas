@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir quebra de linha antes de @</title>
+</head>
+<body>
+    <textarea id="inputText" rows="10" cols="50" oninput="inserirQuebraDeLinha()">Digite seu texto aqui...</textarea>
+    <br>
+    <textarea id="outputText" rows="10" cols="50" readonly></textarea>
+
+    <script>
+        function inserirQuebraDeLinha() {
+            // Obtém o texto do textarea de entrada
+            let texto = document.getElementById('inputText').value;
+
+            // Substitui '@' por '\n@' usando uma expressão regular
+            let novoTexto = texto.replace(/@/g, '\n@');
+
+            // Define o texto modificado no textarea de saída
+            document.getElementById('outputText').value = novoTexto;
+        }
+    </script>
+</body>
+</html>

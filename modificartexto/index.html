@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Linhas</title>
+</head>
+<body>
+    <div> 
+    <textarea id="inputText" rows="10" cols="50">Digite seu texto aqui...</textarea>
+    <br>
+    <button onclick="removerLinhas()">Remover Linhas</button>
+    <br>
+    <textarea id="outputText" rows="10" cols="50" readonly></textarea>
+
+    <script>
+        function removerLinhas() {
+            // Obtém o texto do textarea de entrada
+            let texto = document.getElementById('inputText').value;
+
+            // Divide o texto em linhas
+            let linhas = texto.split('\n');
+            let novoTexto = '';
+
+            // Loop pelas linhas do texto
+            for (let i = 0; i < linhas.length; i++) {
+                // Verifica se a linha começa com "Foto do perfil de"
+                if (!linhas[i].startsWith("Foto do perfil de")) {
+                    // Adiciona a linha ao novo texto
+                    novoTexto += linhas[i] + '\n';
+                }
+            }
+
+            // Define o texto modificado no textarea de saída
+            document.getElementById('outputText').value = novoTexto;
+        }
+    </script>
+    </div>
+</body>
+</html>
